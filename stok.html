@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Stok Buku - Toko Buku Pastel</title>
+
+  <!-- Bootstrap CSS (eksternal) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- eksternal style (pastel) -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- internal CSS -->
+  <style>
+    body { background-color: #fbf9ff; }
+    .page-title { color: var(--pastel-primary); font-weight:700; }
+    .book-card img { height: 200px; object-fit: cover; border-radius: 12px; }
+    .small-muted { font-size: 0.9rem; color:#6c6c6c; }
+    .stok-badge { font-weight:600; }
+    .add-btn { background-color: var(--pastel-primary); color:#fff; border:none; }
+  </style>
+</head>
+<body>
+
+  <!-- inline style pada navbar -->
+  <nav class="navbar" style="background:#f1eefc; padding:12px 24px;">
+    <div class="container-fluid">
+      <a class="navbar-brand fw-bold text-secondary" href="dashboard.html">📚 Toko Buku Online</a>
+      <div>
+        <button class="btn btn-outline-secondary me-2" onclick="window.location.href='dashboard.html'">Kembali</button>
+        <button class="btn add-btn" data-bs-toggle="modal" data-bs-target="#tambahModal">+ Tambah Stok</button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container py-4">
+    <h2 class="text-center page-title mb-3">Daftar Stok / Katalog Buku</h2>
+
+    <!-- search (internal style wrapper) -->
+    <div class="row mb-4">
+      <div class="col-md-6 mx-auto">
+        <input id="searchInput" type="text" class="form-control text-center" placeholder="Cari berdasarkan judul, kode, atau jenis...">
+      </div>
+    </div>
+
+    <!-- kontainer daftar buku -->
+    <div id="bookList" class="row g-4 justify-content-center">
+      <!-- konten diisi oleh stok.js -->
+    </div>
+  </div>
+
+  <!-- Modal: Tambah Stok -->
+  <div class="modal fade" id="tambahModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Tambah Stok Buku Baru</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+
+        <div class="modal-body">
+          <form id="tambahForm">
+            <div class="row g-2">
+              <div class="col-md-6">
+                <label class="form-label">Kode Barang</label>
+                <input type="text" id="inputKode" class="form-control" required>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Nama Barang</label>
+                <input type="text" id="inputNama" class="form-control" required>
+              </div>
+              <div class="col-md-4">
+                <label class="form-label">Jenis</label>
+                <input type="text" id="inputJenis" class="form-control">
+              </div>
+              <div class="col-md-2">
+                <label class="form-label">Edisi</label>
+                <input type="text" id="inputEdisi" class="form-control">
+              </div>
+              <div class="col-md-3">
+                <label class="form-label">Stok</label>
+                <input type="number" id="inputStok" class="form-control" min="0" value="0">
+              </div>
+              <div class="col-md-3">
+                <label class="form-label">Harga (contoh: Rp 100.000)</label>
+                <input type="text" id="inputHarga" class="form-control">
+              </div>
+              <div class="col-12">
+                <label class="form-label">URL Cover (atau letakkan path ke folder img/..)</label>
+                <input type="text" id="inputCover" class="form-control" placeholder="img/namabuku.jpg atau https://...">
+              </div>
+            </div>
+
+            <div class="mt-3 text-end">
+              <button type="button" class="btn btn-secondary me-2" data-bs-dismiss="modal">Batal</button>
+              <button type="submit" class="btn add-btn">Tambah</button>
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- bootstrap + data.js + stok.js -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- PENTING: data.js harus dipanggil dulu -->
+  <script src="js/data.js"></script>
+  <script src="js/stok.js"></script>
+</body>
+</html>

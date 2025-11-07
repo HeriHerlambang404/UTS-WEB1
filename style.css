@@ -1,0 +1,94 @@
+:root {
+  --pastel-primary: #a29bfe;    /* ungu pastel */
+  --pastel-secondary: #81ecec;  /* biru muda */
+  --pastel-soft: #ffeaa7;       /* kuning lembut */
+  --pastel-bg: #f8f6ff;         /* background terang */
+  --text-dark: #2d3436;
+}
+
+/* Reset & font dasar */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--pastel-bg);
+  color: var(--text-dark);
+  margin: 0;
+  padding: 0;
+}
+
+/* Tombol umum */
+.btn-pastel {
+  background-color: var(--pastel-primary);
+  color: white;
+  border: none;
+  transition: 0.3s;
+}
+
+.btn-pastel:hover {
+  background-color: #6c63ff;
+}
+
+/* Header utama */
+header {
+  background-color: var(--pastel-primary);
+  color: white;
+  padding: 15px 0;
+  text-align: center;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+/* Card umum */
+.card {
+  border-radius: 20px;
+  border: 2px solid #f0e9ff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Navigasi dashboard */
+.nav-link {
+  color: var(--text-dark);
+  transition: 0.3s;
+}
+
+.nav-link:hover {
+  color: var(--pastel-primary);
+  text-decoration: underline;
+}
+
+/* Judul halaman */
+.page-title {
+  font-weight: 600;
+  color: var(--pastel-primary);
+}
+
+/* Input form */
+.form-control:focus {
+  border-color: var(--pastel-primary);
+  box-shadow: 0 0 0 0.2rem rgba(162, 155, 254, 0.25);
+}
+
+/* Progress bar (untuk tracking) */
+.progress-bar {
+  background-color: var(--pastel-primary);
+}
+
+/* Footer */
+footer {
+  background-color: var(--pastel-soft);
+  color: #2d3436;
+  text-align: center;
+  padding: 10px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+/* Kartu katalog buku */
+.book-card img {
+  border-radius: 15px;
+  height: 200px;
+  object-fit: cover;
+}
+
+.book-card .card-body {
+  text-align: center;
+}
